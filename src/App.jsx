@@ -2,9 +2,11 @@ import { useEffect, useState } from "react"
 import axios from "axios"
 import Table from 'react-bootstrap/Table';
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router";
 function App() {
   const [columns, setColumns] = useState([]);
   const [records, setRecords] = useState([]);
+  const Navigate = useNavigate();
   useEffect(() => {
     axios.get("http://localhost:3030/users")
       .then(res => {
