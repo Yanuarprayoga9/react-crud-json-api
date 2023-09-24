@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import axios from "axios"
 import Table from 'react-bootstrap/Table';
-
+import { Link } from "react-router-dom";
 function App() {
   const [columns, setColumns] = useState([]);
   const [records, setRecords] = useState([]);
@@ -32,7 +32,7 @@ function App() {
                 <td>{record.name}</td>
                 <td>{record.email}</td>
                 <td>
-                  Del/Update
+                  <Link to={`/edit/${record.id}`}>Edit</Link>
                 </td>
               </tr>
             ))
