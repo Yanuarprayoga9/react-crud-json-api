@@ -32,7 +32,8 @@ function App() {
                 <td>{record.name}</td>
                 <td>{record.email}</td>
                 <td>
-                  <Link to={`/edit/${record.id}`}>Edit</Link>
+                  <Link className="btn  btn-warning" to={`/edit/${record.id}`}>Edit</Link>
+                  <button className="btn btn-danger" onClick={()=>{handleSubmit(record.id)}}>delete</button>
                 </td>
               </tr>
             ))
@@ -42,6 +43,14 @@ function App() {
 
     </div>
   )
+  function handleSubmit(id){
+    axios.delete("http://localhost:3030/users/"+id)
+    .then(res => {
+      alert('user deleted')
+      Navigate('/')
+    })
+    .catch(err => console.log(err))
+  }
 }
 
 export default App

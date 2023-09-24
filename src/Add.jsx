@@ -28,7 +28,7 @@ function Add() {
           <Form.Label>Email</Form.Label>
           <Form.Control type="email" placeholder="name@example.com" onChange={e =>setEmail(e.currentTarget.value)}/>
         </Form.Group> 
-        <button className='btn bg-success' type='submit'>submit</button>
+        <button className='btn bg-success' type='submit' >submit</button>
       </Form>
     </div>
   )
